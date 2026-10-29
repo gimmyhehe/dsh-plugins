@@ -1,0 +1,36 @@
+{
+  "name": "dsh-workspace-open-in-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Web plugin: adds a hover button to every workspace row of the DSH sidebar that opens the project directory in VS Code or Cursor",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "dsh": "^0.2.1-rc.2"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch"
+  },
+  "files": [
+    "index.js",
+    "lib/client.js",
+    "src/client/index.js",
+    "README.md"
+  ],
+  "license": "MIT"
+}
